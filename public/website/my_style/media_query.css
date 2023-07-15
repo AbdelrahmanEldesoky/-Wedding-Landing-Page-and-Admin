@@ -1,0 +1,228 @@
+@media (max-width: 600px) {
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,
+    .nav #nav-check:checked ~ .nav-btn > label {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(60vh - 50px);
+        overflow-y: auto;
+    }
+}
+/* start style  media query */
+@media (min-width: 350px) and (max-width: 991px) {
+    /* start sub header style */
+    .header {
+        padding: 0%;
+    }
+    .divider-light {
+        margin-left: 15%;
+    }
+    .call,
+    .call_two {
+        font-size: 11px !important;
+    }
+    .image_icon {
+        width: 98px;
+    }
+    .btn_book {
+        font-weight: 400;
+        font-size: 19px;
+    }
+    .info_contacts {
+        margin-top: 2%;
+    }
+    .title_header {
+        font-size: 22px !important;
+        font-weight: 400 !important;
+    }
+    .title_header_home {
+        font-size: 1rem !important;
+        font-weight: 400 !important;
+    }
+    .contacts_btn,
+    .contacts_input,
+    .contacts_textarea {
+        border-radius: none;
+    }
+    .title_header_p {
+        font-weight: 400 !important;
+        font-size: 36px !important;
+    }
+    .margin_16 {
+        margin-top: -27px;
+    }
+    /* end sub header style */
+
+    /* start style nav bar */
+    .nav_link {
+        font-size: 10px;
+    }
+    /* end style nav bar */
+
+    /* start style contact */
+    .btn-cherry {
+        width: 111px;
+        font-size: 13px;
+    }
+    .svg-inline--fa {
+        font-size: 19px;
+    }
+    .btn_header {
+        height: 53px;
+    }
+    .btn_header_two {
+        width: 190px;
+    }
+    .masthead_two,
+    .masthead {
+        height: 22.2rem !important;
+    }
+    .text-small h4 {
+        font-size: large !important;
+    }
+
+    .part_button {
+        height: 78px;
+    }
+    .about_text {
+        font-size: 40px !important;
+    }
+    .text-small h3 {
+        font-size: 10px !important;
+    }
+    .col-6 .text-small .text_15 {
+        font-size: 9px !important;
+    }
+    .part_button_link {
+        font-size: 13px !important;
+    }
+    .btn_header {
+        border-radius: 11px;
+    }
+    .about_details,
+    .about_title {
+        font-size: 15px !important;
+    }
+    .contacts_input {
+        height: 54px;
+        border-radius: 12px !important;
+    }
+    .contacts_textarea {
+        border-radius: 12px !important;
+        height: auto !important;
+    }
+    .contacts {
+        border-radius: 0px;
+    }
+    .row_header {
+        margin-left: auto;
+    }
+    /* end style contact */
+
+    /* start style  footer */
+    .footer .col {
+        width: 50%;
+    }
+    .footer .col h1 {
+        font-size: 14px;
+    }
+    .footer .col ul li {
+        font-size: 14px !important;
+    }
+    .details_booking {
+        top: 14%;
+    }
+    .details_booking h4 {
+        font-size: 15px;
+    }
+    .text_15 {
+        font-size: 15px;
+    }
+    .font_cherry {
+        font-size: 14px !important;
+    }
+    .text_book {
+        font-size: 11px;
+    }
+    .booking_btn {
+        font-size: 14px;
+    }
+    .title_content {
+        font-weight: 900;
+        color: #847779;
+        font-size: 64px;
+        line-height: 85px;
+    }
+    .details_content {
+        font-size: 27px;
+    }
+    .the_email {
+        display: none !important;
+    }
+    /* end  style footer */
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .btn-cherry {
+        border-radius: 13%;
+        width: 90px;
+        font-size: 13px;
+    }
+    .svg-inline--fa {
+        font-size: 19px;
+    }
+    .font_cherry {
+        font-size: 15px;
+    }
+    .Booking{
+        font-size: 1.9rem !important;
+    }
+}
+
+@media (max-width: 950px) {
+    .footer .col {
+        width: 33%;
+    }
+    .footer .col h1 {
+        font-size: 14px;
+    }
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}

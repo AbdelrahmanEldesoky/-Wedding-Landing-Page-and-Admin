@@ -1,0 +1,36 @@
+.sub_header p{
+font-family: 'Cherry Swash', cursive;
+font-family: 'PT Serif', serif ;
+font-size: 20px ;
+color: #847779;
+}
+
+.plane_title{
+font-family: 'Cherry Swash';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 53px;
+text-align: center;
+margin-top: 20%;
+color: #000000;
+}
+.plane{
+    margin-top: 50px;
+}
+
+/* start media query */
+@media (max-width: 575px) {
+    .sub-header{
+        height: 65px !important;
+        z-index: 111111;
+    }
+   .sub_header p{
+    font-size: 14px ;
+   }
+   /* .image_icon{
+    display: none;
+   } */
+
+}
+
