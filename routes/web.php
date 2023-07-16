@@ -30,7 +30,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix'=>'farah','as'=>'farah.'], function(){
-    Route::get('/homepage', 'TestController@index')->name('index');
+    Route::get('/homepage', 'HomePageController@index')->name('index');
     Route::get('about', 'AboutController@index')->name('about');
     Route::get('contact', 'ContactController@index')->name('contacts');
     Route::post('contact/store', 'ContactController@store')->name('contacts.store');

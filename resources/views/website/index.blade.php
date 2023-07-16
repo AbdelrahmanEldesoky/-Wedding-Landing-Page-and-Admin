@@ -9,24 +9,23 @@
     <header class="masthead_two  text-white text-center">
         <div class="container d-flex align-items-center flex-column p-5">
             <div class="header_home">
-                <h1 class="masthead-heading text-uppercase mb-0   font_cherry title_header_home">We Make your Dream</h1>
+                <h1 class="masthead-heading text-uppercase mb-0   font_cherry title_header_home">{{$home->txt1}}</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light my-lg-4 w-100 w-lg-75">
                     <div class="divider-custom-icon title_header_p">
-                        <h5 class="font_cherry">Planning, Design &amp; Peace of Mind</h5>
+                        <h5 class="font_cherry">{{$home->txt2}}</h5>
                     </div>
                 </div>
                 <!-- Masthead Subheading-->
                 <div class="container">
                     <div class="row ">
                         <div class="col-lg-6 col-7">
-                            <a class=" text-light text-decoration-none" href="http://127.0.0.1:8000/farah/reservation">
-                                <button type="button" class="btn w-100 btn_header btn-cherry font_cherry btn_book"> Book
-                                    Now </button> </a>
+                            <a class=" text-light text-decoration-none" href="{{ route('farah.booking.reservation') }}">
+                                <button type="button" class="btn w-100 btn_header btn-cherry font_cherry btn_book">حجز الأن</button> </a>
                         </div>
                         <div class="col-lg-6 col-5">
-                            <a class="text-dark text-decoration-none " href="#"> <button type="button"
-                                    class="btn_book btn w-100  btn_header btn_header_two btn-details font_cherry">Details
+                            <a class="text-dark text-decoration-none " href="{{ route('farah.service.index') }}"> <button type="button"
+                                    class="btn_book btn w-100  btn_header btn_header_two btn-details font_cherry">تفاصيل
                                 </button> </a>
                         </div>
                     </div>
@@ -48,7 +47,7 @@
             <div class="row">
                 <div class="col-12 p-5">
                     <h2 class="page-section-heading text-center h1 text-dark mb-0 font_cherry">Let’s
-                        plane your wedding </h2>
+                        تفاصيل حجز قاعة الافراح </h2>
                 </div>
 
                 <div class="col-12">

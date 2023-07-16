@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('contact/{id?}','ContactController@index')->name('contacts');
     Route::post('contacts/update/{id?}','ContactController@update')->name('contacts.update');
     Route::resource('about','AboutController');
+    Route::resource('home','HomepageController');
 
     Route::get('order/edit/{order_id?}/{id?}','OrderController@edit')->name('order.edit');
     Route::post('order/done/{id?}','OrderController@done')->name('order.done');

@@ -23,15 +23,15 @@ class OrderController extends Controller
         return View('dashboard.order.index',compact('orders') );
     }
 
+    /**
+     * Display a listing of the resource.
+     */
     public function get($id)
     {
-        $orders = Order::with(['client'])->orderBy('date_from','ASC')->get();
+        $orders = Order::where('is_active',$id)->with(['client'])->orderBy('date_from','ASC')->get();
 
-        return View('dashboard.order.index',compact('orders') );
+        return View('dashboard.order.get',compact('orders') );
     }
-
-
-
 
     /**
      * Show the form for creating a new resource.
