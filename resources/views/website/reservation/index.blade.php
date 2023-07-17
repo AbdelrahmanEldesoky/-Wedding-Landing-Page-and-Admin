@@ -32,14 +32,14 @@
                             <ul class="autoplay d-flex justify-content-around card-list">
                                  @foreach ($reservations as $reservation)
                                 <li class="card col-sm-12 autoplay_m">
-                                    <img class="w-100" src="{{ asset('website/images/image_categories/Photography.jpg') }}"
+                                    <img  style="width: 418px; height: 315px" src="{{$reservation->image_path}}"
                                         alt="">
                                     <h4 class="new_book p-lg-4 font_cherry">{{$reservation->name}}</h4>
                                     <a class="new_book text-light text-decoration-none"
                                         href="{{ route('farah.booking.section',[$reservation->id,1,0]) }}"> <button type="button"
                                             class=" new_book btn btn_header btn-cherry font_cherry btn_book"> حجز </button> </a>
                                 </li>
-                                @endforeach 
+                                @endforeach
 
 
 

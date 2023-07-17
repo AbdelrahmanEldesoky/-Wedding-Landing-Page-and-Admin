@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Client;
+use App\Models\Home;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductOrder;
@@ -18,9 +19,10 @@ class ServiceController extends Controller
      */
     public function index()
     {
+         $home = Home::find(1);
         $reservations = TypeReservations::get();
 
-        return view('website.service.type',compact('reservations'));
+        return view('website.service.type',compact('reservations','home'));
     }
 
     /**
@@ -53,17 +55,17 @@ class ServiceController extends Controller
     {
 
         $sections = Section::where('type_id',$id)->get();
-
-            return view('website.service.section', compact('sections'));
+        $home = Home::find(1);
+            return view('website.service.section', compact('sections','home'));
     }
 
     public function product(int $id)
     {
-
+        $home = Home::find(1);
         $products = Product::where('section_id',$id)->get();
         $section = Section::find($id);
         $type = TypeReservations::find($section->type_id);
-            return view('website.service.product', compact('products','section','type'));
+            return view('website.service.product', compact('home','products','section','type'));
     }
     /**
      * Show the form for editing the specified resource.

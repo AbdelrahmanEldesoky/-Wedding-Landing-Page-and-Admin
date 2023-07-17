@@ -10,7 +10,11 @@ class Product extends Model
 
     protected $table = 'products';
     protected $guarded = [];
-
+    protected $appends = ['image_path'];
+    public function getImagePathAttribute()
+    {
+        return asset('website/images/' . $this->image);
+    }
     public function section()
     {
         return $this->belongsTo(Section::class);

@@ -89,7 +89,7 @@
                         <td>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
+                                    <img alt="Avatar" class="table-avatar" src="{{$product->image_path}}">
                                 </li>
                             </ul>
                         </td>

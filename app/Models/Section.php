@@ -10,7 +10,11 @@ class Section extends Model
 
     protected $table = 'sections';
     protected $guarded = [];
-
+    protected $appends = ['image_path'];
+    public function getImagePathAttribute()
+    {
+        return asset('website/images/' . $this->image);
+    }
 
     public function type()
     {

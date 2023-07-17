@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Client;
 use App\Models\Contact;
+use App\Models\Home;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductOrder;
@@ -20,7 +21,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('website.contacts.index');
+        $home = Home::find(1);
+        return view('website.contacts.index',compact('home'));
     }
 
     /**

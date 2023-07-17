@@ -27,7 +27,7 @@
                     <ul class="autoplay d-flex justify-content-around card-list">
                        @foreach ($reservations as $reservation)
                         <li class="card col-sm-12">
-                            <img class="w-100" src="{{ asset('website/images/image_categories/Photography.jpg') }}"
+                            <img class="w-100" src="{{$reservation->image_path}}"
                                 alt="">
                             <h4 class="p-lg-4 font_cherry">{{$reservation->name}}</h4>
                             <a class="text-light text-decoration-none"

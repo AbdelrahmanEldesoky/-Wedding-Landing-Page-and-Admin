@@ -47,7 +47,7 @@
                     </div>
                     <div class="body">
                         <p class="text-dark">{{$section->description}}</p>
-                        <img src="{{ asset('website/images/image_categories/new/Decorations_no_border.jpg') }}"
+                        <img src="{{ $section->image_path }}"
                             alt="Graphic">
                     </div>
                 </a>

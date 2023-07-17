@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Client;
+use App\Models\Home;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductOrder;
@@ -19,10 +20,11 @@ class AboutController extends Controller
      */
     public function index()
     {
+        $home = Home::find(1);
         $about = About::find(1);
         $client = Client::count('id');
         $order = Order::count('id');
-        return view('website.about.index',compact('about','client','order'));
+        return view('website.about.index',compact('home','about','client','order'));
     }
 
     /**

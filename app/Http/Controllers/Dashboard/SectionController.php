@@ -8,7 +8,8 @@ use App\Models\Section;
 use App\Models\TypeReservations;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 class SectionController extends Controller
 {
     /**
@@ -51,19 +52,18 @@ class SectionController extends Controller
             $request_data['image'] = 0;
         }
 
-        /*
-            if ($request->image) {
-                Image::make($request->image)
-                    ->resize(300, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })
-                    ->save('public/uploads/type'.$request->image->hashName());
-                    //->save('/home/u516457093/domains/scarfaceonline.site/public_html/uploads/product_images/' . $request->image->hashName());
+        if ($request->image) {
 
-                $request_data['image'] = $request->image->hashName();
 
-            }//end of if
-*/
+
+            Image::make($request->image)
+                ->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->save(public_path('website/images/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
+
+        }
 
         $section =Section::create($request_data);
 
@@ -106,6 +106,22 @@ class SectionController extends Controller
             $request_data['is_active'] = 0;
         }
 
+
+        if ($request->image) {
+
+            if ($section->image != 'default.png') {
+
+                Storage::disk('public')->delete('/website/images/' . $section->image);
+
+            }//end of if
+
+        Image::make($request->image)
+            ->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->save(public_path('website/images/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
+        }
 
         $section->update($request_data);
 

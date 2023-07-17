@@ -51,16 +51,16 @@
                     </div>
                     <div class="col-8 col-lg-6">
                         <p class="call">
-                            call us
+                           تواصل معنا
                         </p>
                         <p class=" call margin_16">
-                            01067755241
+                            {{$home->phone}}
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-4 m-auto">
-                <img class=" image_icon" src="{{ asset('website/images/icon.jpg ') }}" alt="">
+                <img class=" image_icon" src="{{$home->image_pathlogo}}" alt="">
             </div>
             <div class="col-4 col-lg-4 p-lg-3 my-2 m-lg-0">
                 <div class="row m-auto">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="col-6">
                         <p class="call">
-                            Reservation
+                            تاريخ
                         </p>
                         <p class="call margin_16">
                             <script>
@@ -195,48 +195,46 @@
             <div class="row">
                 <!-- Footer Location-->
                 <div class="col p-lg-3 border-end border-2">
-                    <h4 class="text-light font_cherry">Farha Hall</h4>
+                    <h4 class="text-light font_cherry">قاعة المرج</h4>
                     <ul>
-                        <li><a class="text-light font_lato text-decoration-none" href="#">Reservation</a>
+                        <li><a class="text-light font_lato text-decoration-none" href={{ route('farah.booking.reservation') }}>حجز</a>
                         </li>
-                        <li><a class="text-light font_lato text-decoration-none" href="#">Service</a></li>
-                        <li><a class="text-light font_lato text-decoration-none" href="#">About</a></li>
-                        <li><a class="text-light font_lato text-decoration-none" href="#">Contacts</a>
+                        <li><a class="text-light font_lato text-decoration-none" href="{{ route('farah.service.index') }}">ماذا نقدم</a></li>
+                        <li><a class="text-light font_lato text-decoration-none" href="{{ route('farah.about') }}">من نحن</a></li>
+                        <li><a class="text-light font_lato text-decoration-none" href="{{ route('farah.contacts') }}">تواصل معنا</a>
                         </li>
                     </ul>
                 </div>
                 <!-- Footer Social Icons-->
                 <div class="col p-lg-3 border-end border-2">
-                    <h4 class="text-light font_cherry">Contacts</h4>
+                    <h4 class="text-light font_cherry">تواصل معنا</h4>
                     <ul>
-                        <li class="font_lato text-light"><i class="fa-solid fa-location-dot"></i> 84 St ,
-                            Alexandria </li>
-                        <li class="font_lato text-light"><i class="fa-solid fa-phone"></i> 01067755241</li>
-                        <li class="font_lato text-light the_email"><i class="fa-solid fa-envelope"></i>
-                            hamadamano9@gmail.com</li>
+                        <li class="font_lato text-light"><i class="fa-solid fa-location-dot"></i>  {{$home->address}}  </li>
+                        <li class="font_lato text-light"><i class="fa-solid fa-phone"></i>  {{$home->phone}}  </li>
+                        <li class="font_lato text-light the_email"><i class="fa-solid fa-envelope"></i>  {{$home->email}}  </li>
 
                     </ul>
 
                     <div class="container">
                         <div class="row">
                             <div class="col-2 m-auto">
-                                <a class="h4 text-decoration-none text-light" href="#"><i
+                                <a class="h4 text-decoration-none text-light" href="{{$home->facebook}}"><i
                                         class="fa-brands fa-facebook"></i></a>
                             </div>
                             <div class="col-2 m-auto">
-                                <a class="h4 text-decoration-none text-light" href="#"><i
+                                <a class="h4 text-decoration-none text-light" href="{{$home->instagram}}"><i
                                         class="fa-brands fa-instagram"></i></a>
                             </div>
-                        </div>z
+                        </div>
                     </div>
                 </div>
                 <!-- Footer About Text-->
                 <div class="col p-lg-3">
-                    <h4 class="text-light font_cherry">Opening</h4>
+                    <h4 class="text-light font_cherry">قاعة المرج</h4>
                     <ul>
-                        <li class="text-light font_lato">Monday 9AM - 9PM</li>
-                        <li class="text-light font_lato">Saturday 9AM - 9PM</li>
-                        <li class="text-light font_lato">Sunday 9AM - 9PM</li>
+                        <li class="text-light font_lato">حجز فرح </li>
+                        <li class="text-light font_lato">حجز عيد ميلاد</li>
+                        <li class="text-light font_lato">حجز مؤتمر</li>
                     </ul>
                 </div>
             </div>

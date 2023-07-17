@@ -73,7 +73,7 @@
                         <td>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
+                                    <img alt="Avatar" class="table-avatar" src="{{$type->image_path}}">
                                 </li>
                             </ul>
                         </td>
@@ -92,7 +92,7 @@
                                 </i>
                                 تعديل
                             </a>
-                            
+
                             <form action="{{ route('dashboard.type.destroy', $type->id) }}" method="post" style="display: inline-block">
                                 {{ csrf_field() }}
                                 {{ method_field('delete') }}

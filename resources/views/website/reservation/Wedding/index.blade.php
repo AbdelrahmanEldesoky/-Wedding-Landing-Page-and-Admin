@@ -43,7 +43,7 @@
                         <li class="card col-sm-12 autoplay_two_m ">
                             <div>
                                 <img class="w-100 "
-                                    src="{{ asset('website/images/image_categories/Photography_no_border.jpg') }}"
+                                    src="{{ $product->image_path}}"
                                     alt="">
                             </div>
 

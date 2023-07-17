@@ -7,6 +7,8 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\Section;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -43,26 +45,15 @@ class ProductController extends Controller
             $request_data['is_active'] = 0;
         }
 
+        if ($request->image) {
+            Image::make($request->image)
+                ->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->save(public_path('website/images/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
 
-        if($request->has('image')){
-            $request_data['image'] = 1;
-        }else{
-            $request_data['image'] = 0;
-        }
-
-        /*
-            if ($request->image) {
-                Image::make($request->image)
-                    ->resize(300, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })
-                    ->save('public/uploads/type'.$request->image->hashName());
-                    //->save('/home/u516457093/domains/scarfaceonline.site/public_html/uploads/product_images/' . $request->image->hashName());
-
-                $request_data['image'] = $request->image->hashName();
-
-            }//end of if
-*/
+        }//end of if
 
         Product::create($request_data);
 
@@ -104,7 +95,22 @@ class ProductController extends Controller
         }else{
             $request_data['is_active'] = 0;
         }
+        if ($request->image) {
 
+            if ($product->image != 'default.png') {
+
+                Storage::disk('public')->delete('/website/images/' . $about->image1);
+
+            }//end of if
+
+            Image::make($request->image)
+                ->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->save(public_path('website/images/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
+
+        }
 
         $product->update($request_data);
 

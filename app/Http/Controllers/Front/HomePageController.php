@@ -21,8 +21,9 @@ class HomePageController extends Controller
     public function index()
     {
         $home = Home::find(1);
-
-        return view('website.index',compact('home'));
+        $reservations = TypeReservations::get();
+        $about = About::find(1);
+        return view('website.index',compact('home','reservations','about'));
     }
 
     /**

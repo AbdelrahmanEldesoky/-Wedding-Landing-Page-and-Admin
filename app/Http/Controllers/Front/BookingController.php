@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Client;
+use App\Models\Home;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductOrder;
@@ -18,9 +19,10 @@ class BookingController extends Controller
      */
     public function index()
     {
+        $home = Home::find(1);
         $reservations = TypeReservations::get();
 
-        return view('website.reservation.index',compact('reservations'));
+        return view('website.reservation.index',compact('reservations','home'));
     }
 
     /**
@@ -30,7 +32,7 @@ class BookingController extends Controller
 
     public function section(Request $request ,int $type_id, int $orderBy_id,$id)
     {
-
+        $home = Home::find(1);
         if($id ==0){
 
             $o = Order::max('id');
@@ -48,9 +50,9 @@ class BookingController extends Controller
         if($orderBy_id>$max_orderBy) {
             $orders = Order::with('products')->where('id',$id)->get();
             $total = Order::where('id',$id)->value('total_price');
-            return view('website.reservation.payment',compact('id','orders','total'));
+            return view('website.reservation.payment',compact('home','id','orders','total'));
         }else{
-            return view('website.reservation.Wedding.index', compact('sections', 'orderBy_id', 'type_id','id'));
+            return view('website.reservation.Wedding.index', compact('home','sections', 'orderBy_id', 'type_id','id'));
         }
     }
 
