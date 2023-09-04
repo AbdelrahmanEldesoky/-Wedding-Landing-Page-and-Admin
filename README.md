@@ -1,5 +1,7 @@
 Welcome to  the Wedding Landing Page and Admin Panel with Booking System and Dashboard using PHP Laravel!
 
+at link https://p-project.shop/
+
 The Wedding Landing Page and Admin Panel is a web application designed for wedding planners to manage their clients' bookings and showcase their services. This application features a landing page for clients to learn more about the wedding planning services offered, as well as an admin panel for authorized users to manage bookings, services, and products.
 
 Installation:
